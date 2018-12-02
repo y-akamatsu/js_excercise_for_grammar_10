@@ -14,31 +14,26 @@
  *     - removeMaxNumberFromArray関数を実行した後の配列numbersの内容は [10, 500, 234, 965, 221] のままである
  */
 const removeMaxNumberForArray = (_numbers) => {
-  //引数_numbersを変数に代入
-  const copiedNumbers = _numbers.slice();
-  //インデックス番後を0にする
-  let indexOfMaxNumber = 0;
-  //最大値を入れる変数を設置
+  let copiedNumbers = _numbers.slice();
+  let indexMaxNumber =0;
   let currentMaxNumber;
-  //copiedNUmbersをイテレーション処理する
-  copiedNumbers.forEach((number, index) => {
-    
+    copiedNumbers.forEach((number, index) => {
     if(currentMaxNumber === undefined || currentMaxNumber < number){
       currentMaxNumber = number;
-      indexOfMaxNumber = index;
+      indexMaxNumber = index;
     }
   });
 
-  copiedNumbers.splice(indexOfMaxNumber, 1);
+  copiedNumbers.splice(indexMaxNumber, 1);
 
   return copiedNumbers;
-}
+};
 
 const numbers = [10, 500, 234, 965, 221];
-const returnedNumbers = removeMaxNumberForArray(numbers);
+const returnNUmbers = removeMaxNumberForArray(numbers);
 
-console.log('numbersの内容は [10, 500, 234, 965, 221] であるべき : ', numbers);
-console.log('returnedNumbersの内容は [10, 500, 234, 221] であるべき : ', returnedNumbers);
+console.log('numbersの値は[10, 500, 234, 965, 221]である', numbers);
+console.log('emoveMaxNumberFromArray関数の戻り値は[10, 500, 234, 221]である', removeMaxNumberForArray(numbers));
 
 /**
  * 課題2: 数値が格納されている配列を引数で受け取り、小さい順に並べ替える
