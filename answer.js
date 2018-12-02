@@ -30,9 +30,9 @@ const removeMaxNumberFromArray = (_numbers) => {
 };
 
 const numbers = [10, 500, 234, 965, 221];
-const returnedNumbers = removeMaxNumberFromArray(numbers);
+const returnedNumbers = removeMaxNumberFromAr < ray(numbers);
 
-console.log('numbersの内容は [10, 500, 234, 965, 221] であるべき : ', numbers);
+console.log('numbersの内容は [10, 500, 234, 965, 221] であるべき : ', number);
 console.log('returnedNumbersの内容は [10, 500, 234, 221] であるべき : ', returnedNumbers);
 
 

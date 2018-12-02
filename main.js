@@ -14,6 +14,23 @@
  *     - removeMaxNumberFromArray関数を実行した後の配列numbersの内容は [10, 500, 234, 965, 221] のままである
  */
 
+const removeMaxNumberFromArray = (_numbers) => {
+  const copiedNumbers = _numbers.slice();
+  let indexOfMaxNumber = 0;
+  let currentMaxNumber;
+  copiedNumbers.forEach((number, index) => {
+    if (currentMaxNumber === undefined || currentMaxNumber < number) {
+      currentMaxNumber = number;
+      indexOfMaxNumber = index;
+    }
+  });
+  copiedNumbers.splice(indexOfMaxNumber, 1);
+  return copiedNumbers;
+};
+const numbers = [10, 500, 234, 965, 221];
+const returnedNumbers = removeMaxNumberFromArray(numbers);
+console.log('numbersの内容は [10, 500, 234, 965, 221] であるべき : ', numbers);
+console.log('returnedNumbersの内容は [10, 500, 234, 221] であるべき : ', returnedNumbers);
 
 
 /**
