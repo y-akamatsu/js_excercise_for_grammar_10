@@ -30,11 +30,10 @@ const removeMaxNumberFromArray = (_numbers) => {
 };
 
 const numbers = [10, 500, 234, 965, 221];
-const returnedNumbers = removeMaxNumberFromAr < ray(numbers);
+const returnedNumbers = removeMaxNumberFromArray(numbers);
 
 console.log('numbersの内容は [10, 500, 234, 965, 221] であるべき : ', number);
 console.log('returnedNumbersの内容は [10, 500, 234, 221] であるべき : ', returnedNumbers);
-
 
 /**
  * 課題2: 数値が格納されている配列を引数で受け取り、小さい順に並べ替える

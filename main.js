@@ -13,25 +13,32 @@
  *     - removeMaxNumberFromArray関数の戻り値は[10, 500, 234, 221]である
  *     - removeMaxNumberFromArray関数を実行した後の配列numbersの内容は [10, 500, 234, 965, 221] のままである
  */
-
-const removeMaxNumberFromArray = (_numbers) => {
+const removeMaxNumberForArray = (_numbers) => {
+  //引数_numbersを変数に代入
   const copiedNumbers = _numbers.slice();
+  //インデックス番後を0にする
   let indexOfMaxNumber = 0;
+  //最大値を入れる変数を設置
   let currentMaxNumber;
+  //copiedNUmbersをイテレーション処理する
   copiedNumbers.forEach((number, index) => {
-    if (currentMaxNumber === undefined || currentMaxNumber < number) {
+    
+    if(currentMaxNumber === undefined || currentMaxNumber < number){
       currentMaxNumber = number;
       indexOfMaxNumber = index;
     }
   });
+
   copiedNumbers.splice(indexOfMaxNumber, 1);
+
   return copiedNumbers;
-};
+}
+
 const numbers = [10, 500, 234, 965, 221];
-const returnedNumbers = removeMaxNumberFromArray(numbers);
+const returnedNumbers = removeMaxNumberForArray(numbers);
+
 console.log('numbersの内容は [10, 500, 234, 965, 221] であるべき : ', numbers);
 console.log('returnedNumbersの内容は [10, 500, 234, 221] であるべき : ', returnedNumbers);
-
 
 /**
  * 課題2: 数値が格納されている配列を引数で受け取り、小さい順に並べ替える
@@ -51,3 +58,24 @@ console.log('returnedNumbersの内容は [10, 500, 234, 221] であるべき : '
  *     - 「Array.prototype.sort()」を使う
  *       - https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
  */
+
+ const sortNumbers = (_numbers) => {
+   const copiedNumbers = _numbers.slice();
+   copiedNumbers.sort((a, b) => {
+     if(a < b) {
+       return -1;
+     }
+     if (a > b) {
+       return 1;
+     }
+     return 0
+   });
+
+   return copiedNumbers;
+ };
+
+const beforeSortNumbers = [1000, 10, 500, 234, 965, 221, 102];
+const afterSortNumbers = sortNumbers(beforeSortNumbers);
+
+console.log('beforeSortNumbersの内容は [1000, 10, 500, 234, 965, 221, 102] であるべき : ', beforeSortNumbers);
+console.log('afterSortNumbersの内容は [10, 102, 221, 234, 500, 965, 1000] であるべき : ', afterSortNumbers);
